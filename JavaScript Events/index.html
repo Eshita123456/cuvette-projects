@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Events Demo</title>
+  <style>
+    #parent {
+      padding: 20px;
+      background-color: lightblue;
+      margin-bottom: 20px;
+    }
+
+    #child {
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #000;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      background-color: #f2f2f2;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔁 Event Bubbling Example</h2>
+  <div id="parent">
+    Parent Div
+    <button id="child">Click Me (Child)</button>
+  </div>
+
+  <h2>📋 Event Delegation Example</h2>
+  <ul id="itemList">
+    <li>🍎 Apple</li>
+    <li>🍌 Banana</li>
+    <li>🍇 Grape</li>
+  </ul>
+
+  <h2>🧠 'this' Keyword Example</h2>
+  <button id="myBtn">Click Me (Change My Color)</button>
+
+  <script>
+    // 1. Event Bubbling
+    document.getElementById("parent").addEventListener("click", function () {
+      console.log("🧩 Parent clicked");
+    });
+
+    document.getElementById("child").addEventListener("click", function () {
+      console.log("🔘 Child (button) clicked");
+    });
+
+    // 2. Event Delegation
+    document.getElementById("itemList").addEventListener("click", function (event) {
+      if (event.target.tagName === "LI") {
+        console.log("✅ You clicked:", event.target.textContent);
+        event.target.style.backgroundColor = "#d1ffd1";
+      }
+    });
+
+    // 3. this keyword
+    document.getElementById("myBtn").addEventListener("click", function () {
+      console.log("🎯 You clicked:", this.textContent);
+      this.style.backgroundColor = "yellow";
+    });
+  </script>
+
+</body>
+</html>

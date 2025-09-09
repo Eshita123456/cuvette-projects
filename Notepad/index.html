@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Notepad</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+  <div class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg">
+    <div class="flex items-center mb-4">
+      <input type="checkbox" id="autosave-checkbox" class="mr-2">
+      <label for="autosave-checkbox" class="text-gray-700 text-lg">Save My Notes</label>
+    </div>
+    <textarea
+      id="notepad"
+      placeholder="Write your notes here"
+      class="w-full h-96 p-4 border border-gray-300 rounded-md text-gray-800 focus:outline-none focus:ring focus:border-blue-300 resize-none"
+    ></textarea>
+  </div>
+
+  <script>
+    const textarea = document.getElementById('notepad');
+    const checkbox = document.getElementById('autosave-checkbox');
+    const STORAGE_KEY = 'autosave-data';
+
+    let intervalId = null;
+
+    // Load saved data on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        textarea.value = saved;
+      }
+    });
+
+    // Handle autosave toggle
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        // Start autosaving every 1 second
+        intervalId = setInterval(() => {
+          localStorage.setItem(STORAGE_KEY, textarea.value);
+        }, 1000);
+      } else {
+        // Stop autosaving
+        clearInterval(intervalId);
+      }
+    });
+  </script>
+</body>
+</html>

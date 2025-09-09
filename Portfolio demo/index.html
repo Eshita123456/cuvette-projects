@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eshita Srivastava | Frontend Developer & SEO Specialist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+    }
+    .portfolio-projects {
+      margin-bottom: 60px;
+    }
+    .navbar-toggle .icon-bar {
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Eshita Srivastava</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="jumbotron text-center" style="margin-top: 80px; background-color: #25b79f; color: white;">
+    <h1>Hi, I'm Eshita</h1>
+    <p>Frontend Developer & SEO Specialist</p>
+    <a href="#about"><i class="fa fa-chevron-down fa-2x" style="margin-top: 30px;"></i></a>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="container text-center">
+    <h2>About Me</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://placehold.co/150x150" class="img-circle" alt="Eshita" />
+        <p>Self-taught web developer from India. I specialize in HTML, CSS, JavaScript, SEO, and responsive design.</p>
+      </div>
+      <div class="col-md-6">
+        <h4>Skills</h4>
+        <ul class="list-unstyled">
+          <li>HTML5 / CSS3</li>
+          <li>JavaScript / Bootstrap</li>
+          <li>SEO / Git / WordPress</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" style="background-color: #25b79f; color: #fff; padding: 60px 0">
+    <div class="container">
+      <h2 class="text-center">My Portfolio</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Instagram Clone</h4>
+          <p>A basic Instagram-like UI clone built using HTML, CSS, and JS</p>
+          <a href="#" class="btn btn-default">View Project</a>
+        </div>
+        <div class="col-md-6">
+          <h4>Villa Website</h4>
+          <p>Responsive real estate villa showcase website</p>
+          <a href="#" class="btn btn-default">View Project</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Snake Game</h4>
+          <p>Classic Snake Game using HTML/CSS/JS</p>
+          <a href="#" class="btn btn-default">View Game</a>
+        </div>
+        <div class="col-md-6">
+          <h4>Image Gallery</h4>
+          <p>Responsive image gallery with animation</p>
+          <a href="#" class="btn btn-default">View Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container text-center" style="padding: 60px 0;">
+    <h2>Contact Me</h2>
+    <p>Email: <strong>eshita.dev@example.com</strong></p>
+    <p>LinkedIn | GitHub | Twitter</p>
+  </section>
+
+  <footer class="text-center" style="background-color: #07374a; color: #fff; padding: 20px;">
+    <p>&copy; 2025 Eshita Srivastava. All rights reserved.</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 550) {
+        $('.navbar').addClass('solid');
+      } else {
+        $('.navbar').removeClass('solid');
+      }
+    });
+  </script>
+</body>
+
+</html>
